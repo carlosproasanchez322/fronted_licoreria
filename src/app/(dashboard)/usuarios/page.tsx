@@ -312,7 +312,7 @@ function UsuariosPageContent() {
 
 export default function UsuariosPage() {
   return (
-    <RoleGuard allowedRoles={['ADMIN']}>
+    <RoleGuard allowedRoles={['Administrador']}>
       <UsuariosPageContent />
     </RoleGuard>
   );

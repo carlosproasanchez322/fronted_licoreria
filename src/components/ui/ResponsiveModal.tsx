@@ -118,27 +118,23 @@ export function ResponsiveFormModal({
         {children}
       </div>
 
-      {(onSubmit || onClose) && (
+      {onSubmit && (
         <div className="border-t border-slate-800 p-4 sm:p-6">
           <div className="flex flex-col-reverse sm:flex-row gap-2 sm:gap-3">
-            {onClose && (
-              <button
-                onClick={onClose}
-                disabled={isLoading}
-                className="w-full sm:w-auto px-4 py-2 rounded-lg border border-slate-700 text-slate-300 hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-              >
-                {cancelLabel}
-              </button>
-            )}
-            {onSubmit && (
-              <button
-                onClick={onSubmit}
-                disabled={isLoading}
-                className="w-full sm:w-auto px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-              >
-                {isLoading ? 'Procesando...' : submitLabel}
-              </button>
-            )}
+            <button
+              onClick={onClose}
+              disabled={isLoading}
+              className="w-full sm:w-auto px-4 py-2 rounded-lg border border-slate-700 text-slate-300 hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {cancelLabel}
+            </button>
+            <button
+              onClick={onSubmit}
+              disabled={isLoading}
+              className="w-full sm:w-auto px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {isLoading ? 'Procesando...' : submitLabel}
+            </button>
           </div>
         </div>
       )}

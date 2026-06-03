@@ -21,7 +21,7 @@ export function RoleGuard({ children, allowedRoles }: RoleGuardProps) {
       return;
     }
 
-    const hasAccess = allowedRoles.includes(usuario.rol);
+    const hasAccess = allowedRoles.includes(usuario.rol.nombre);
     setAuthorized(hasAccess);
     setReady(true);
 
